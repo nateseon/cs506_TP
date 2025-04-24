@@ -15,5 +15,9 @@ df['education'] = df['education'].map({'Graduate': 1, 'Not Graduate': 0})
 df['self_employed'] = df['self_employed'].map({'Yes': 1, 'No': 0})
 df['loan_status'] = df['loan_status'].map({'Approved': 1, 'Rejected': 0})
 
+# Save the encoded file for scaling
+encoded_csv_path = "loan_approval_encoded.csv"
+df.to_csv(encoded_csv_path, index=False)
+
 # Print sample encoded columns
 print(df[['education', 'self_employed', 'loan_status']].head())
